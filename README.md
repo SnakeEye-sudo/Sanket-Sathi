@@ -1,4 +1,4 @@
-# Sanket Sathi
+﻿# Sanket Sathi
 
 ## About
 
@@ -9,6 +9,12 @@ Hindi-English Morse translator with fast local conversion and offline-ready util
 - GitHub repo: https://github.com/SnakeEye-sudo/Sanket-Sathi
 - Tags: sathi-family, morse-code, translator, utility-app, pwa, hindi-app
 
+<!-- app-screenshot:start -->
+## App Screenshot
+
+![App screenshot](docs/preview.png)
+
+<!-- app-screenshot:end -->
 ## Creator
 
 Built and originally created by **Er. Sangam Krishna** ([SnakeEye-sudo](https://github.com/SnakeEye-sudo)).
@@ -24,3 +30,4 @@ Built and originally created by **Er. Sangam Krishna** ([SnakeEye-sudo](https://
 This repository uses the **MIT License** with a required **NOTICE** file.
 That means collaboration is allowed, but copyright and attribution notices must stay preserved.
 See [LICENSE](LICENSE), [NOTICE](NOTICE), and [CONTRIBUTING.md](CONTRIBUTING.md).
+
