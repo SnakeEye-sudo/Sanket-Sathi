@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14181f">
+  <meta name="description" content="Sanket Sathi Hindi aur English text ko Morse me translate karta hai aur basic Morse decode bhi deta hai.">
+  <title>Sanket Sathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="night">
+  <div class="ambient-layer">
+    <div class="ambient-orb orb-a"></div>
+    <div class="ambient-orb orb-b"></div>
+    <div class="ambient-grid"></div>
+    <div class="ambient-noise"></div>
+  </div>
+
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-top">
+        <div class="brand-wrap">
+          <img src="logo.svg" alt="Sanket Sathi logo" class="brand-logo">
+          <div><p class="hero-tag">Signal desk</p><h1>Sanket Sathi</h1></div>
+        </div>
+        <div class="toggle-row"><button class="mini-toggle" id="langHiBtn" type="button">हिन्दी</button><button class="mini-toggle" id="langEnBtn" type="button">English</button></div>
+      </div>
+      <div class="hero-grid">
+        <section class="hero-copy">
+          <a class="family-chip" href="https://snakeeye-sudo.github.io/Aapka-Sathi/">Aapka-Sathi family ka hissa</a>
+          <h2 class="hero-headline" id="heroHeadline">Hindi ya English likho, Morse code me badlo, ya Morse ko text me decode karo.</h2>
+          <p class="hero-text" id="heroText">Hindi text ko lightweight transliteration ke through Morse me map kiya jata hai, aur English/Morse dono ke liye fast local translation milta hai.</p>
+          <div class="hero-badges"><span class="hero-badge">Text → Morse</span><span class="hero-badge">Morse → Text</span><span class="hero-badge">Offline-ready</span></div>
+        </section>
+      </div>
+    </header>
+
+    <main class="app-grid">
+      <section class="panel panel-main">
+        <div class="tabbar" id="modeTabs"></div>
+        <section class="tool-view active" id="view-encode">
+          <article class="utility-card">
+            <label class="field-label" for="plainInput">Text</label>
+            <textarea id="plainInput" class="journal-textarea"></textarea>
+            <div class="pair-grid">
+              <button class="menu-btn age-btn" id="encodeBtn" type="button">Translate to Morse</button>
+              <button class="menu-btn age-btn" id="copyMorseBtn" type="button">Copy Morse</button>
+            </div>
+            <div class="result-panel translator-output" id="morseOutput"></div>
+          </article>
+        </section>
+
+        <section class="tool-view" id="view-decode">
+          <article class="utility-card">
+            <label class="field-label" for="morseInput">Morse</label>
+            <textarea id="morseInput" class="journal-textarea"></textarea>
+            <div class="pair-grid">
+              <button class="menu-btn age-btn" id="decodeBtn" type="button">Decode to Text</button>
+              <button class="menu-btn age-btn" id="copyTextBtn" type="button">Copy Text</button>
+            </div>
+            <div class="result-panel translator-output" id="textOutput"></div>
+          </article>
+        </section>
+      </section>
+
+      <aside class="panel panel-side">
+        <section class="side-section">
+          <div class="section-head tight"><div><p class="eyebrow">Guide</p><h3>Format</h3></div></div>
+          <div class="stack-card">
+            <div class="stack-row"><span>Letter gap</span><strong>space</strong></div>
+            <div class="stack-row"><span>Word gap</span><strong>/</strong></div>
+            <div class="stack-row"><span>Hindi mode</span><strong>Translit</strong></div>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="logo.svg" alt="Sanket Sathi logo">
+        <div><strong>Sanket Sathi</strong><p>Signals aur text ko local speed par convert karne ke liye.</p></div>
+      </div>
+      <p class="footer-credit">Crafted and developed by <strong>Er. Sangam Krishna</strong>.</p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

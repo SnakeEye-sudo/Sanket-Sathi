@@ -1,0 +1,17 @@
+{
+  "name": "Sanket Sathi",
+  "short_name": "Sanket",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#14181f",
+  "theme_color": "#14181f",
+  "description": "Hindi and English to Morse translator with transliteration support and family sync hooks.",
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
