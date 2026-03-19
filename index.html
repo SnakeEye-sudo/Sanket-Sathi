@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14181f">
+  <meta name="description" content="Sanket Sathi Morse translator, decoder, practice console, aur signal guide ko ek app shell me laata hai.">
+  <title>Sanket Sathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="night">
+  <div class="ambient-layer">
+    <div class="ambient-orb orb-a"></div>
+    <div class="ambient-orb orb-b"></div>
+    <div class="ambient-grid"></div>
+    <div class="ambient-noise"></div>
+  </div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-card">
+      <div class="drawer-head">
+        <div>
+          <p class="eyebrow" id="menuLabel">Quick Controls</p>
+          <h2 id="menuTitle">Sanket menu</h2>
+        </div>
+        <button class="icon-btn" id="closeDrawerBtn" type="button" aria-label="Close menu">×</button>
+      </div>
+
+      <div class="drawer-grid">
+        <section class="menu-panel">
+          <p class="eyebrow" id="languageLabel">Language</p>
+          <h3 id="languageTitle">Hindi aur English</h3>
+          <div class="toggle-row" role="group" aria-label="Language">
+            <button class="mini-toggle" id="langHiBtn" type="button">हिंदी</button>
+            <button class="mini-toggle" id="langEnBtn" type="button">English</button>
+          </div>
+        </section>
+
+        <section class="menu-panel">
+          <p class="eyebrow" id="themeLabel">Theme</p>
+          <h3 id="themeTitle">Signal studio mode</h3>
+          <button class="menu-btn" id="themeBtn" type="button">Theme badlo</button>
+        </section>
+
+        <section class="menu-panel">
+          <p class="eyebrow" id="installLabel">Install</p>
+          <h3 id="installTitle">App ko phone par rakho</h3>
+          <button class="menu-btn" id="installBtn" type="button">Install app</button>
+        </section>
+
+        <section class="menu-panel">
+          <p class="eyebrow" id="authLabel">Family login</p>
+          <h3 id="authTitle">Ek login, poori family</h3>
+          <p class="muted small-copy" id="authStateText">Login status load ho raha hai...</p>
+          <button class="menu-btn" id="authBtn" type="button">Login with Google</button>
+        </section>
+
+        <section class="menu-panel">
+          <p class="eyebrow" id="reminderLabel">Reminder</p>
+          <h3 id="reminderTitle">Daily practice nudge</h3>
+          <label class="field-label" for="reminderTime" id="reminderField">Preferred reminder time</label>
+          <input id="reminderTime" class="text-input" type="time" value="19:30">
+          <button class="menu-btn" id="saveReminderBtn" type="button">Reminder save karo</button>
+          <p class="muted small-copy" id="reminderStatus"></p>
+        </section>
+
+        <section class="menu-panel menu-panel-wide">
+          <p class="eyebrow" id="pagesLabel">Pages</p>
+          <h3 id="pagesTitle">Family links aur info</h3>
+          <div class="menu-links">
+            <a href="about.html" id="pageAbout">About</a>
+            <a href="resources.html" id="pageResources">Resources</a>
+            <a href="contact.html" id="pageContact">Contact</a>
+            <a href="privacy-policy.html" id="pagePrivacy">Privacy Policy</a>
+            <a href="terms.html" id="pageTerms">Terms &amp; Conditions</a>
+            <a href="https://snakeeye-sudo.github.io/Aapka-Sathi/" id="pageFamily">Aapka-Sathi Family</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </aside>
+
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-top">
+        <div class="brand-wrap">
+          <img src="logo.png" alt="Sanket Sathi logo" class="brand-logo">
+          <div>
+            <p class="hero-tag" id="brandTag">Signal desk</p>
+            <h1>Sanket Sathi</h1>
+          </div>
+        </div>
+        <button class="hamburger-btn" id="openDrawerBtn" type="button" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="hero-grid">
+        <section class="hero-copy">
+          <a class="family-chip" href="https://snakeeye-sudo.github.io/Aapka-Sathi/" id="familyChip">Aapka-Sathi family ka hissa</a>
+          <h2 class="hero-headline" id="heroHeadline">Text ko Morse me badlo, Morse ko decode karo, aur roz thoda signal practice bhi karo.</h2>
+          <p class="hero-text" id="heroText">Translator, decoder, quick guide, aur memory-practice flow ek hi app shell me milta hai taaki Sanket Sathi page nahi balki proper signal tool lage.</p>
+          <div class="hero-badges">
+            <span class="hero-badge" id="badgeOne">Text → Morse</span>
+            <span class="hero-badge" id="badgeTwo">Morse → Text</span>
+            <span class="hero-badge" id="badgeThree">Daily practice</span>
+          </div>
+        </section>
+
+        <aside class="hero-side">
+          <article class="metric-card">
+            <p class="eyebrow" id="metricHistoryLabel">Recent work</p>
+            <strong id="historyMetricValue">0</strong>
+            <p class="muted" id="historyMetricMeta">Abhi koi translation history nahi hai.</p>
+          </article>
+          <article class="metric-card">
+            <p class="eyebrow" id="metricPracticeLabel">Practice wins</p>
+            <strong id="practiceMetricValue">0</strong>
+            <p class="muted" id="practiceMetricMeta">Har sahi answer yahan count hoga.</p>
+          </article>
+          <article class="metric-card">
+            <p class="eyebrow" id="metricSyncLabel">Family sync</p>
+            <strong id="syncMetricValue">Ready</strong>
+            <p class="muted" id="syncMetricMeta">Login karte hi settings aur history sync ho jayegi.</p>
+          </article>
+        </aside>
+      </div>
+    </header>
+
+    <main class="app-grid">
+      <section class="panel panel-main">
+        <div class="tabbar" id="modeTabs"></div>
+
+        <section class="tool-view active" id="view-encode">
+          <article class="utility-card">
+            <div class="section-head tight">
+              <div>
+                <p class="eyebrow" id="encodeLabel">Encoder</p>
+                <h3 id="encodeTitle">Text ko Morse me badlo</h3>
+              </div>
+            </div>
+            <label class="field-label" for="plainInput" id="plainLabel">Text</label>
+            <textarea id="plainInput" class="text-input" rows="7" placeholder="SOS, Hello, ya koi Hindi line likhiye."></textarea>
+            <div class="pair-grid">
+              <button class="menu-btn age-btn" id="encodeBtn" type="button">Translate to Morse</button>
+              <button class="menu-btn age-btn" id="copyMorseBtn" type="button">Copy Morse</button>
+            </div>
+            <div class="result-panel translator-output" id="morseOutput">--</div>
+          </article>
+        </section>
+
+        <section class="tool-view" id="view-decode">
+          <article class="utility-card">
+            <div class="section-head tight">
+              <div>
+                <p class="eyebrow" id="decodeLabel">Decoder</p>
+                <h3 id="decodeTitle">Morse ko readable text banao</h3>
+              </div>
+            </div>
+            <label class="field-label" for="morseInput" id="morseLabel">Morse</label>
+            <textarea id="morseInput" class="text-input" rows="7" placeholder="... --- ... / .... . .-.. .--."></textarea>
+            <div class="pair-grid">
+              <button class="menu-btn age-btn" id="decodeBtn" type="button">Decode to Text</button>
+              <button class="menu-btn age-btn" id="copyTextBtn" type="button">Copy Text</button>
+            </div>
+            <div class="result-panel translator-output" id="textOutput">--</div>
+          </article>
+        </section>
+
+        <section class="tool-view" id="view-practice">
+          <article class="utility-card">
+            <div class="section-head tight">
+              <div>
+                <p class="eyebrow" id="practiceLabel">Practice</p>
+                <h3 id="practiceTitle">Aaj ka signal challenge</h3>
+              </div>
+            </div>
+            <div class="result-panel translator-output" id="practicePrompt">... --- ...</div>
+            <label class="field-label" for="practiceAnswer" id="practiceAnswerLabel">Answer</label>
+            <input id="practiceAnswer" class="text-input" type="text" placeholder="Yahan decoded answer likho">
+            <div class="pair-grid">
+              <button class="menu-btn age-btn" id="checkPracticeBtn" type="button">Check answer</button>
+              <button class="menu-btn age-btn" id="nextPracticeBtn" type="button">Next challenge</button>
+            </div>
+            <div class="result-panel" id="practiceFeedback">Roz 2-3 quick drills se Morse memory fast hoti hai.</div>
+          </article>
+        </section>
+      </section>
+
+      <aside class="panel panel-side">
+        <section class="side-section">
+          <div class="section-head tight">
+            <div>
+              <p class="eyebrow" id="guideLabel">Guide</p>
+              <h3 id="guideTitle">Format rules</h3>
+            </div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-row"><span id="guideLetterGap">Letter gap</span><strong>space</strong></div>
+            <div class="stack-row"><span id="guideWordGap">Word gap</span><strong>/</strong></div>
+            <div class="stack-row"><span id="guideHindiMode">Hindi mode</span><strong>translit</strong></div>
+          </div>
+        </section>
+
+        <section class="side-section">
+          <div class="section-head tight">
+            <div>
+              <p class="eyebrow" id="signalsLabel">Quick codes</p>
+              <h3 id="signalsTitle">Useful signal memory</h3>
+            </div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-row"><span>SOS</span><strong>... --- ...</strong></div>
+            <div class="stack-row"><span>OK</span><strong>--- -.-</strong></div>
+            <div class="stack-row"><span>HELP</span><strong>.... . .-.. .--.</strong></div>
+            <div class="stack-row"><span>HI</span><strong>.... ..</strong></div>
+          </div>
+        </section>
+
+        <section class="side-section">
+          <div class="section-head tight">
+            <div>
+              <p class="eyebrow" id="historyLabel">History</p>
+              <h3 id="historyTitle">Recent translations</h3>
+            </div>
+          </div>
+          <div class="history-list" id="historyList"></div>
+        </section>
+
+        <section class="side-section">
+          <div class="section-head tight">
+            <div>
+              <p class="eyebrow" id="profileLabel">Profile</p>
+              <h3 id="profileTitle">App status</h3>
+            </div>
+          </div>
+          <div class="stack-card" id="profileCard"></div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Sanket Sathi logo">
+        <div>
+          <strong>Sanket Sathi</strong>
+          <p id="footerNote">Signal practice aur translation ko pocket-friendly rakhne ke liye.</p>
+        </div>
+      </div>
+      <p class="footer-credit">Crafted and developed by <strong>Er. Sangam Krishna</strong>.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+  <script defer src="notification-prompt.js"></script>
+  <script defer src="sathi-navigator.js"></script>
+</body>
+</html>
+
+
